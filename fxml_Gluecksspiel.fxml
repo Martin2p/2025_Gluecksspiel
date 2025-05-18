@@ -13,9 +13,9 @@
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.FXMLController">
    <children>
-      <VBox layoutX="157.0" prefHeight="360.0" prefWidth="420.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" layoutX="157.0" prefHeight="360.0" prefWidth="420.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <MenuBar prefHeight="25.0" prefWidth="400.0">
+            <MenuBar prefHeight="26.0" prefWidth="420.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Datei">
                   <items>
@@ -29,9 +29,27 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <HBox alignment="CENTER" prefHeight="245.0" prefWidth="420.0">
+            <Label prefHeight="39.0" prefWidth="144.0" text="Jedes Spiel kostet 10 € !  " textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label prefHeight="50.0" prefWidth="280.0" text="Bei 2 gleichen Würfeln beträgt der Gewinn 20 €" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label prefHeight="50.0" prefWidth="280.0" text="Bei 3 gleichen Würfeln beträgt der Gewinn 100 €" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="135.0" prefWidth="420.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 5;" text="Zahl 1" textAlignment="CENTER">
+                  <Label fx:id="wuerfel1" alignment="CENTER" contentDisplay="CENTER" prefHeight="77.0" prefWidth="77.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 5;" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -42,7 +60,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 5;" text="Zahl 2" textAlignment="CENTER">
+                  <Label fx:id="wuerfel2" alignment="CENTER" contentDisplay="CENTER" prefHeight="77.0" prefWidth="77.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 5;" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -53,7 +71,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 5;" text="Zahl 3" textAlignment="CENTER">
+                  <Label fx:id="wuerfel3" alignment="CENTER" contentDisplay="CENTER" prefHeight="77.0" prefWidth="77.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 5;" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -63,13 +81,26 @@
                   </Label>
                </children>
             </HBox>
+            <AnchorPane prefHeight="145.0" prefWidth="420.0">
+               <children>
+                  <Label layoutX="110.0" layoutY="30.0" prefHeight="25.0" prefWidth="80.0" text="Guthaben:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="guthaben" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="219.0" layoutY="25.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: grey;" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="78.0" mnemonicParsing="false" onAction="#beendenKlick" prefHeight="35.0" prefWidth="100.0" text="Beenden" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="78.0" mnemonicParsing="false" onAction="#wetten" prefHeight="35.0" prefWidth="100.0" text="Würfeln!" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
-      <AnchorPane layoutX="2.0" layoutY="287.0" minHeight="0.0" minWidth="0.0" prefHeight="73.0" prefWidth="420.0">
-         <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="10.0" mnemonicParsing="false" onAction="#beendenKlick" prefHeight="35.0" prefWidth="100.0" text="Beenden" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="83.0" layoutY="10.0" mnemonicParsing="false" onAction="#beendenKlick" prefHeight="35.0" prefWidth="100.0" text="Drehen!" textAlignment="CENTER" />
-         </children>
-      </AnchorPane>
    </children>
 </AnchorPane>
